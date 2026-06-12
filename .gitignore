@@ -1,0 +1,23 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ── 敏感凭据（.example 模板保留） ──
+scripts/env/.bili.env
+scripts/env/.feishu.env
+scripts/env/.llm.env
+
+# ── 运行时数据 & 日志 ──
+scripts/log/
+scripts/tmp/
+
+# ── 配置备份 ──
+scripts/config/*.bak
+scripts/config/*.yaml.bak
+
+# ── IDE ──
+.vscode/

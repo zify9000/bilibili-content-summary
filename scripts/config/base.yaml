@@ -1,0 +1,34 @@
+# B站视频/图文摘要 — 全局配置
+
+# B站 API 请求
+bili:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+# ASR 转写配置
+asr:
+  provider: xiaomimimo       # ASR 服务提供商：xiaomimimo (data URL) / standard (裸 base64)
+  chunk_duration: 900       # 音频分段时长（秒），15分钟一段
+  chunk_bitrate: "64k"      # 分段比特率
+  max_workers: 3             # 并行转写并发数
+  probe_timeout: 120         # 探针超时（秒）
+  transcribe_timeout: 600    # 转写超时（秒），15分钟分段需更长超时
+
+# LLM 摘要配置
+llm:
+  max_tokens: 131072
+  timeout: 300
+  temperature: 0.3
+
+# 飞书推送
+feishu:
+  retry_times: 3
+  retry_delay: 10
+
+# OCR 识图配置（xiaomimimo）
+ocr:
+  max_workers: 3          # 并行 OCR 并发数
+  timeout: 120             # 单张图片 OCR 超时（秒）
+  image_max_size: 4096     # 图片长边最大像素（超过则等比缩放）
+
+# 临时文件
+temp_dir: "/tmp"
